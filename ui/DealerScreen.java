@@ -79,7 +79,7 @@ public class DealerScreen {
         frame.getContentPane().add(panelRight,BorderLayout.CENTER);
     }
 
-    // dealerName
+    // initializing dealer's name
     private void dealerName() {
         JLabel lblName = new JLabel("Enter Dealers Name: ");
         lblName.setBounds(10, 50, 200, 14);
