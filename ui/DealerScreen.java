@@ -17,7 +17,7 @@ import dto.*;
 // need to double check class name with other partners
 import ui.case2; // case 2
 import ui.Validation.ZipCodeValidator; // Yinxing's part
-import service.DealerSearchFilter; // Jiemin's part
+import service.SearchDealer; // Jiemin's part
 
 
 public class DealerScreen {
@@ -114,7 +114,7 @@ public class DealerScreen {
         Border defaultBorder = textFieldDealerName.getBorder();
         textFieldDealerName.setBorder(BorderFactory.createLineBorder(new Color(0, 113, 238), 3));
         textFieldDealerName.getDocument().addDocumentListener(new DocumentListener() {
-        	// Interface DocumentListener
+        // Interface DocumentListener
             @Override
             public void insertUpdate(DocumentEvent documentEvent) {
                 maybeHighlight();
