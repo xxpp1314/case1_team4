@@ -11,11 +11,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Vector;
-import persist.*;
-import dto.*;
+import incentive.*;
+import dao.*;
 
 // import ui.case2; // case 2
-import ui.Validation.Validator; // Yinxing's part
+import Validation.Validator; // Yinxing's part
 import Search.SearchDealer; // Jiemin's part
 
 
