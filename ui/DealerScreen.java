@@ -1,4 +1,13 @@
+
 /* Use Case I Screen */
+package ui;
+import incentive.*;
+import dao.*;
+
+import service.*;
+//import ui.*; 
+import validation.*;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.event.DocumentEvent;
@@ -11,12 +20,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Vector;
-import incentive.*;
-import dao.*;
-
-// import ui.case2; // case 2
-import Validation.Validator; // Yinxing's part
-import Search.SearchDealer; // Jiemin's part
 
 
 public class DealerScreen {
@@ -64,7 +67,7 @@ public class DealerScreen {
     // left panel containing the form
     private void initializeLeftPanel() {
         panelLeft= new JPanel();
-        panelLeft.setBackground(new Color(0, 30, 54));
+        panelLeft.setBackground(new Color(165, 194, 147));
         panelLeft.setLayout(null);
         panelLeft.setPreferredSize(new Dimension(280,650));
         frame.getContentPane().add(panelLeft,BorderLayout.WEST);
@@ -80,7 +83,7 @@ public class DealerScreen {
 
     // initializing dealer's name
     private void dealerName() {
-        JLabel lblName = new JLabel("Enter Dealers Name: ");
+        JLabel lblName = new JLabel("Search by Dealers Name: ");
         lblName.setBounds(10, 50, 200, 14);
         lblName.setForeground(Color.WHITE);
         panelLeft.add(lblName);
@@ -100,8 +103,9 @@ public class DealerScreen {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 String dealerName = textFieldDealerName.getText();
-                if(!dealerName.isEmpty() && !Validator.isAValidDealerName(dealerName)) {
-                    JOptionPane.showMessageDialog(frame, "This is an invalid dealer name. Please try again.");
+                // !dealerName.isEmpty()&&!Validator.isValidDealerName(dealerName)
+                if(!dealerName.isEmpty()&&!Validator.isValidDealerName(dealerName)) {
+                    JOptionPane.showMessageDialog(frame, "Invalid input. Please try again.");
                 }
             }
 
@@ -139,7 +143,7 @@ public class DealerScreen {
 
     // handling zip code
     private void zipCode() {
-        JLabel lblPhone = new JLabel("Enter Zipcode (Search Dealers Near You): ");
+        JLabel lblPhone = new JLabel("Search by Zipcode: ");
         lblPhone.setBounds(10, 190, 270, 14);
         lblPhone.setForeground(Color.WHITE);
         panelLeft.add(lblPhone);
@@ -193,7 +197,8 @@ public class DealerScreen {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 String zipCode=textFieldZipCode.getText();
                 try {
-	                if((!textFieldZipCode.getText().isEmpty()) && !Validation.isValidZipCodeRange(zipCode)) {
+                //  && !Validator.isValidZipCodeRange(zipCode)
+	                if(!textFieldZipCode.getText().isEmpty()&& !Validator.isValidZipCodeRange(zipCode)) {
 	                	// if zip code is invalid
 	                    JOptionPane.showMessageDialog(frame, "This is a invalid Zip Code, Please enter again \nHint: Zip Code should be 5-digit or 9-digit (ZIP+4)."); 
 	                }
@@ -203,26 +208,6 @@ public class DealerScreen {
                 }
             }
         });
-    }
-    
-    private void mileRange() {
-    	
-    }
-    
-    private void searchButton() {
-    	
-    	
-    }
-    
-    private void createTable() throws Exception {
-    	
-    	
-    }
-    
-    public static void setJTableColumnsWidth(JTable table, int tablePreferredWidth, double... percentages) {
-    	
-    	
-    	
     }
     
 }
