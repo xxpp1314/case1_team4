@@ -14,10 +14,9 @@ import java.util.Vector;
 import persist.*;
 import dto.*;
 
-// need to double check class name with other partners
-import ui.case2; // case 2
-import ui.Validation.ZipCodeValidator; // Yinxing's part
-import service.SearchDealer; // Jiemin's part
+// import ui.case2; // case 2
+import ui.Validation.Validator; // Yinxing's part
+import Search.SearchDealer; // Jiemin's part
 
 
 public class DealerScreen {
@@ -27,7 +26,7 @@ public class DealerScreen {
     private JTextField textFieldZipCode;
     private JComboBox<String> comboBox;
     private JButton btnSearch;
-    private ArrayList<Dealer> dealerList=new ArrayList<>();
+    // private ArrayList<Dealer> dealerList=new ArrayList<>();
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -47,8 +46,8 @@ public class DealerScreen {
         frameAndPanel();
         dealerName();
         zipCode();
-        mileRange(); // Fang's method
-        searchButton(); // Fang's method
+        // mileRange(); // Fang's method
+        // searchButton(); // Fang's method
     }
 
     // complete frame
@@ -101,7 +100,7 @@ public class DealerScreen {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 String dealerName = textFieldDealerName.getText();
-                if(!dealerName.isEmpty() && !ZipCodeValidator.isAValidDealerName(dealerName)) {
+                if(!dealerName.isEmpty() && !Validator.isAValidDealerName(dealerName)) {
                     JOptionPane.showMessageDialog(frame, "This is an invalid dealer name. Please try again.");
                 }
             }
