@@ -193,7 +193,7 @@ public class DealerScreen {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 String zipCode=textFieldZipCode.getText();
                 try {
-	                if((!textFieldZipCode.getText().isEmpty()) && !Validation.isAValidZipCodeCharacters(zipCode)) {
+	                if((!textFieldZipCode.getText().isEmpty()) && !Validation.isValidZipCodeRange(zipCode)) {
 	                	// if zip code is invalid
 	                    JOptionPane.showMessageDialog(frame, "This is a invalid Zip Code, Please enter again \nHint: Zip Code should be 5-digit or 9-digit (ZIP+4)."); 
 	                }
